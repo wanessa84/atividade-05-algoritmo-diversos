@@ -96,10 +96,13 @@ print(f"O preço com 10% de desconto é: R${preco_com_desconto:.2f}")
 #9) Crie um algoritmo que leia o valor de um produto e informe se ele está dentro de uma faixa de preço (menor que R$: 50.00, entre R$:50.00 e R$:100.00 ou maior que R$:100.00)
 #-------------------------
 
-
-
-
-
+valor = float(input("Digite o valor do produto: R$ "))
+if valor < 50.00:
+    print("O produto está na faixa: menor que R$ 50,00.")
+elif 50.00 <= valor <= 100.00:
+    print("O produto está na faixa: Entre R$ 50,00 E R$100,00.")
+else:
+    print("O produto está na faixa: Maior que R$ 100,00.")   
 
 
 #--------------------------
@@ -116,15 +119,21 @@ print(f"A área do quadrado é: {area}")
 #-------------------------------
 #11) Crie uma função lambda que receba dois números e retorne a diferença entre o maior e o menor número. Solicite ao usuário os dois números e exiba o resultado.
 #-------------------------------
-
+diferenca = lambda x, y: abs(x - y)
+num1 = float(input("Digite o primeiro numero: "))
+num2 = float(input("Digite o segundo numero: "))
+resultado = diferenca(num1, num2)
+print(f"A diferença entre o maior e o menor número é: {resultado} ")
 
 
 #------------------------------
 #12) Crie um algoritmo que leia a altura de uma pessoa e informe se ela pode ou não participar de uma montanha-russa, considerando que a altura mínima necessária é 1,40m.
 #-----------------------------
-
-
-
+altura = float(input("Digite a sua altura em metros: "))
+if altura >= 1.40:
+    print("Voce pode participar da montanha-russa!")
+else:
+    print("Desculpe, você nao pode participar da montanha-russa.")    
 
 #-------------------------------
 #13) Crie uma função chamada converter_fahrenheit_para_celsius que
@@ -133,3 +142,9 @@ print(f"A área do quadrado é: {area}")
 #Fórmula: C = (5/9) * (Fahrenheit - 32).
 #------------------------------------
 
+def converter_fahrenheit_para_celsius(fahrenheit):
+    celsius = (5/9) * (fahrenheit - 32)
+    return celsius
+fahrenheit_input = float(input("Digite a temperatura em fahrenheit: "))
+celsius_resultado = converter_fahrenheit_para_celsius(fahrenheit_input)
+print(f"A temperatura em Celsius é: {celsius_resultado:.2f}ºC")
